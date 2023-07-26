@@ -1,5 +1,9 @@
 import style from './Select.module.css';
 import { useState } from 'react';
+import Line1 from './Line1';
+import Line2 from './Line2';
+import Line3 from './Line3';
+import Line4 from './Line4';
 
 const Select = () => {
     const [time, setTime] = useState(new Date());
@@ -27,16 +31,14 @@ const Select = () => {
             {item}
         </button>
     );
-    const imgsrcs = ['img/1호선 노선도(Line 1 Map).png', 'img/2호선 노선도(Line 2 Map).png', 'img/3호선 노선도(Line 3 Map).png', 'img/4호선 노선도(Line 4 Map).png'];
+    const linemap = [<Line1></Line1>, <Line2></Line2>, <Line3></Line3>, <Line4></Line4>];
 
     return (
         <main>
             <header><h1 className={style.center}>부산 지하철 정보</h1></header>
             <div><strong className={style.left + ' ' + style.xlarge}>역을 선택하세요</strong>{btntags}</div>
             <div><strong className={style.large + ' ' + style.left}>{getDayType(time.getDay())} {timeformat(time)}</strong></div>
-            <div className={style.center}>
-                <img src={line === -1 ? 'img/종합노선도(Metro Line Map).png': imgsrcs[line]} alt='노선도 이미지' className={classnames[line]}></img>
-            </div>
+            {linemap[line]}
         </main>
     );
 }

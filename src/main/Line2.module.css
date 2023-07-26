@@ -1,19 +1,19 @@
-img {
+img.line2 {
     width: 100%;
 }
 
-button {
+button.station {
     width: 29px;
     height: 29px;
     border-radius: 50%;
     background-color: transparent;
     border: 2px solid #20ac15;
 }
-button:hover {
+button.station:hover {
     background-color: #20ac15;
     box-shadow: 0px 0px 5px 5px #e054db;
 }
-button.big {
+button.station.big {
     margin-top: -4px;
     width: 37px;
     height: 37px;
