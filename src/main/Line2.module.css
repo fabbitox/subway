@@ -1,0 +1,27 @@
+img {
+    width: 100%;
+}
+
+button {
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid #20ac15;
+}
+button:hover {
+    background-color: #20ac15;
+    box-shadow: 0px 0px 5px 5px #e054db;
+}
+button.big {
+    margin-top: -4px;
+    width: 37px;
+    height: 37px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin: -251px 13px 0px 13px;
+}

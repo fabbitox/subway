@@ -1,7 +1,52 @@
 main {
+    padding: 40px 15%;
+}
+.center {
     text-align: center;
 }
+.large {
+    font-size: large;
+}
+.xlarge {
+    font-size: x-large;
+}
 
-.blank {
-    margin: 0px 10px;
+button {
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    width: 80px;
+    height: 40px;
+}
+
+.line1 {
+    background-color: #f7612f;
+}
+.line2 {
+    background-color: #20ac15;
+}
+.line3 {
+    background-color: #b58942;
+}
+.line4 {
+    background-color: #286fdb;
+}
+.selected {
+    border: 3px solid #33333366;
+}
+
+.left {
+    margin: 20%;
+}
+
+img {
+    margin-top: 20px;
+    width: 100%;
+}
+img.line3 {
+    width: 80%;
+}
+img.line4 {
+    width: 60%;
 }
