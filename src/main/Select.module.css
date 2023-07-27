@@ -1,20 +1,75 @@
+.left {
+    margin: 20%;
+}
+@media (max-width: 1280px) {
+    html {
+        font-size: 16px;
+    }
+    .left {
+        margin: 10%;
+    }
+}
+@media (max-width: 1024px) {
+    .left {
+        margin: 5rem;
+    }
+}
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    .left {
+        margin: 3rem;
+    }
+}
+@media (orientation: portrait) {
+    html {
+        transform: rotate(-90deg);
+        transform-origin: top left;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100vh;
+        height: 100vw;
+    }
+    .left {
+        margin: 4rem;
+    }
+    @media (min-height: 768px) {
+        html {
+            font-size: 16px;
+        }
+        .left {
+            margin: 10%;
+        }
+    }
+    @media (min-height: 1280px) {
+        html {
+            font-size: 20px;
+        }
+        .left {
+            margin: 15%;
+        }
+    }
+}
+
 .center {
     text-align: center;
 }
 .large {
-    font-size: large;
+    font-size: 1.1rem;
 }
 .xlarge {
-    font-size: x-large;
+    font-size: 1.3rem;
 }
 
 button {
-    margin: 10px;
-    border-radius: 10px;
+    margin: 0.7rem;
+    border-radius: 0.8rem;
     color: white;
     border: none;
-    width: 80px;
-    height: 40px;
+    width: 5.6rem;
+    height: 2.8rem;
 }
 
 .line1 {
@@ -30,9 +85,5 @@ button {
     background-color: #286fdb;
 }
 .selected {
-    border: 3px solid #33333366;
-}
-
-.left {
-    margin: 20%;
+    border: 0.2rem solid #33333366;
 }
