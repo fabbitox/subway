@@ -27,7 +27,9 @@ const Select = () => {
     const [line, setline] = useState(-1);
     const lines = ['1호선', '2호선', '3호선', '4호선'];
     const btntags = lines.map((item, idx) =>
-        <button onClick={() => setline(idx)} className={classnames[idx] + ' ' + style.large + (idx === line ? ' ' + style.selected : '')}>
+        <button onClick={() => setline(idx)}
+        className={classnames[idx] + ' ' + style.large + (idx === line ? ' ' + style.selected : '')}
+        key={lines[idx]}>
             {item}
         </button>
     );
