@@ -32,13 +32,15 @@ const Select = () => {
         </button>
     );
     const linemap = [<Line1></Line1>, <Line2></Line2>, <Line3></Line3>, <Line4></Line4>];
+    const totalmap = <img src='img/종합노선도(Metro Line Map).png' alt='종합노선도'></img>
+    const map = line === -1 ? totalmap : linemap[line]
 
     return (
         <main>
             <header><h1 className={style.center}>부산 지하철 정보</h1></header>
             <div><strong className={style.left + ' ' + style.xlarge}>역을 선택하세요</strong>{btntags}</div>
             <div className={style.up}><strong className={style.large + ' ' + style.left}>{getDayType(time.getDay())} {timeformat(time)}</strong></div>
-            {linemap[line]}
+            {map}
         </main>
     );
 }
