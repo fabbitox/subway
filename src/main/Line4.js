@@ -10,7 +10,6 @@ const Line4 = () => {
 
     return (
         <div className={style.map}>
-            <img src={'img/4호선 노선도(Line 4 Map).png'} alt='4호선 노선도' className={style.line4}></img>
             {buttonrow}
         </div>
     );

@@ -9,8 +9,7 @@ const Line2 = () => {
     const buttonrow = <div className={style.row}>{buttons}</div>;
 
     return (
-        <div>
-            <img src={'img/2호선 노선도(Line 2 Map).png'} alt='2호선 노선도' className={style.line2}></img>
+        <div className={style.map}>
             {buttonrow}
         </div>
     );

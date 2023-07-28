@@ -1,3 +1,6 @@
+html {
+    font-size: 18px;
+}
 .left {
     margin: 20%;
 }
@@ -6,12 +9,12 @@
         font-size: 16px;
     }
     .left {
-        margin: 10%;
+        margin: 15%;
     }
 }
 @media (max-width: 1024px) {
     .left {
-        margin: 5rem;
+        margin: 10%;
     }
 }
 @media (max-width: 768px) {
@@ -31,28 +34,37 @@
         left: 0;
         width: 100vh;
         height: 100vw;
+        font-size: 18px;
     }
     .left {
-        margin: 4rem;
+        margin: 20%;
     }
-    @media (min-height: 768px) {
+    @media (max-height: 1280px) {
         html {
             font-size: 16px;
-        }
-        .left {
-            margin: 10%;
-        }
-    }
-    @media (min-height: 1280px) {
-        html {
-            font-size: 20px;
         }
         .left {
             margin: 15%;
         }
     }
+    @media (max-height: 1024px) {
+        .left {
+            margin: 10%;
+        }
+    }
+    @media (max-height: 768px) {
+        html {
+            font-size: 14px;
+        }
+        .left {
+            margin: 3rem;
+        }
+    }
 }
 
+.up {
+    margin-bottom: 1rem;
+}
 .center {
     text-align: center;
 }

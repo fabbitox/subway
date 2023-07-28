@@ -1,31 +1,31 @@
-div.map {
-    text-align: center;
-}
-
-img.line4 {
-    width: 50%;
-}
-
 button.station {
-    width: 29px;
-    height: 29px;
+    width: 3%;
+    height: 1.5vmax;
     border-radius: 50%;
     background-color: transparent;
     border: 2px solid #286fdb;
+    margin: 14.7vmax 0 12vmax;
 }
 button.station:hover {
     background-color: #286fdb;
-    box-shadow: 0px 0px 5px 5px #d89125;
+    box-shadow: 0px 0px 0.2vmax 0.2vmax #d89125;
 }
 button.station.big {
-    margin-top: -4px;
-    width: 37px;
-    height: 37px;
+    margin: 14.5vmax 0 11.9vmax;
+    width: 3.8%;
+    height: 1.9vmax;
 }
 
 .row {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
-    margin: -264px 502px 0px 502px;
+    margin: 0 2.2% 0 2.3%;
+    width: 95.5%;
+}
+
+.map {
+    margin: 0 25%;
+    background-image: url('img/line4.png');
+    background-size: contain;
 }
