@@ -2,24 +2,24 @@ html {
     font-size: 18px;
 }
 .left {
-    margin: 20%;
+    margin: 15%;
 }
 @media (max-width: 1280px) {
     html {
-        font-size: 16px;
-    }
-    .left {
-        margin: 15%;
+        font-size: 15px;
     }
 }
 @media (max-width: 1024px) {
+    html {
+        font-size: 13px;
+    }
     .left {
-        margin: 10%;
+        margin: 8%;
     }
 }
 @media (max-width: 768px) {
     html {
-        font-size: 14px;
+        font-size: 11px;
     }
     .left {
         margin: 3rem;
@@ -34,27 +34,27 @@ html {
         left: 0;
         width: 100vh;
         height: 100vw;
-        font-size: 18px;
+        font-size: 16px;
     }
     .left {
-        margin: 20%;
+        margin: 15%;
     }
     @media (max-height: 1280px) {
         html {
-            font-size: 16px;
+            font-size: 14px;
         }
         .left {
-            margin: 15%;
+            margin: 12%;
         }
     }
     @media (max-height: 1024px) {
         .left {
-            margin: 10%;
+            margin: 9%;
         }
     }
     @media (max-height: 768px) {
         html {
-            font-size: 14px;
+            font-size: 11px;
         }
         .left {
             margin: 3rem;
@@ -67,6 +67,9 @@ html {
 }
 .center {
     text-align: center;
+}
+.normal {
+    font-size: 1rem;
 }
 .large {
     font-size: 1.1rem;
@@ -101,4 +104,30 @@ button {
 }
 img {
     width: 100%;
+}
+
+button.end {
+    padding: 0 1rem;
+    width: fit-content;
+    height: 2.1rem;
+}
+button.end:hover {
+    font-weight: bold;
+    background-color: white;
+}
+button.end.line1:hover {
+    color: #f7612f;
+    border: 0.2rem solid #f7612f;
+}
+button.end.line2:hover {
+    color: #20ac15;
+    border: 0.2rem solid #20ac15;
+}
+button.end.line3:hover {
+    color: #b58942;
+    border: 0.2rem solid #b58942;
+}
+button.end.line4:hover {
+    color: #286fdb;
+    border: 0.2rem solid #286fdb;
 }
