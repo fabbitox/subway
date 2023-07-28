@@ -1,10 +1,9 @@
 import './App.css';
-// import Select from './main/Select';
-import Test from './main/Test';
+import Select from './main/Select';
 
 function App() {
   return (
-    <Test></Test>
+    <Select></Select>
   );
 }
 

@@ -33,7 +33,7 @@ const Select = () => {
     );
     const linemap = [<Line1></Line1>, <Line2></Line2>, <Line3></Line3>, <Line4></Line4>];
     const totalmap = <img src='img/종합노선도(Metro Line Map).png' alt='종합노선도'></img>
-    const map = line === -1 ? totalmap : linemap[line]
+    const map = line === -1 ? totalmap : linemap[line];
 
     return (
         <main>
