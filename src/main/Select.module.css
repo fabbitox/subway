@@ -3,7 +3,8 @@ button {
     border-radius: 0.6rem;
     color: white;
     border: none;
-    width: 5.2rem;
+    padding: 0 1rem;
+    width: fit-content;
     height: 2.6rem;
 }
 
@@ -27,8 +28,6 @@ img {
 }
 
 button.end {
-    padding: 0 1rem;
-    width: fit-content;
     height: 2.1rem;
 }
 button.end:hover {

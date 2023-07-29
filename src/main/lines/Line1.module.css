@@ -5,6 +5,7 @@ button.station {
     background-color: transparent;
     border: 0.15vmax solid #f7612f;
     margin: 15.9vmax 0 13vmax;
+    padding: 0;
 }
 button.station:hover {
     background-color: #f7612f;

@@ -29,8 +29,8 @@ const Select = () => {
     const lines = ['1호선', '2호선', '3호선', '4호선'];
     const linebtns = lines.map((item, idx) =>
         <button onClick={() => setline(idx)}
-        className={classnames[idx] + ' ' + main.large + (idx === line ? ' ' + style.selected : '')}
-        key={lines[idx]}>
+        className={classnames[idx] + ' ' + style.line + ' ' + main.large
+        + (idx === line ? ' ' + style.selected : '')} key={lines[idx]}>
             {item}
         </button>
     );
@@ -39,7 +39,8 @@ const Select = () => {
         ['수영:301', '대저:317'], ['안평:414', '미남:401']];
     const endbtns = end.map((lineend, lineidx) => lineend.map(
         (item, idx) => <button key={item} onClick={() => setend(idx)}
-            className={style.end + ' ' + classnames[lineidx] + ' ' + main.normal + (idx === endidx ? ' ' + style.selected : '')}>
+            className={style.end + ' ' + classnames[lineidx] + ' ' + main.normal
+            + (idx === endidx ? ' ' + style.selected : '')}>
             {item.split(':')[0]}
         </button>)
     );
