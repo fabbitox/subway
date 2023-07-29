@@ -26,6 +26,6 @@ button.station.big {
 
 .map {
     margin: 0 25%;
-    background-image: url('img/line4.png');
+    background-image: url('../img/line4.png');
     background-size: contain;
 }

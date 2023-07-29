@@ -1,9 +1,9 @@
 import './App.css';
-import Select from './main/Select';
+import Main from './main/Main';
 
 function App() {
   return (
-    <Select></Select>
+    <Main></Main>
   );
 }
 
