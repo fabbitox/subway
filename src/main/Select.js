@@ -9,7 +9,7 @@ const Select = () => {
     const [time, setTime] = useState(new Date());
     setInterval(() => setTime(new Date()), 10000);
     const getDayType = (weekday) => {
-        return weekday === 0 ? '공휴일' : weekday === 6 ? '토요일' : '평일';
+        return weekday === 0 ? '일요일' : weekday === 6 ? '토요일' : '평일';
     }
     const timeformat = (time) => {
         const hour = time.getHours();
