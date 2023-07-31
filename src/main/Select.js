@@ -10,7 +10,7 @@ const Select = () => {
     const [time, setTime] = useState(new Date());
     setInterval(() => setTime(new Date()), 10000);
     const getDayType = (weekday) => {
-        return weekday === 0 ? '일요일' : weekday === 6 ? '토요일' : '평일';
+        return weekday === 0 ? '일요일:3' : weekday === 6 ? '토요일:2' : '평일:1';
     }
     const timeformat = (time) => {
         const hour = time.getHours();
@@ -45,7 +45,7 @@ const Select = () => {
         </button>)
     );
     const [holiday, toggleholiday] = useState(false);
-    const linemap = [<Line1 day={holiday ? '공휴일' : getDayType(time.getDay())} end={end[0][endidx]} />, <Line2 day={holiday ? '공휴일' : getDayType(time.getDay())} end={end[1][endidx]} />,
+    const linemap = [<Line1 day={holiday ? '공휴일:4' : getDayType(time.getDay())} end={end[0][endidx]} />, <Line2 day={holiday ? '공휴일' : getDayType(time.getDay())} end={end[1][endidx]} />,
     <Line3 day={holiday ? '공휴일' : getDayType(time.getDay())} end={end[2][endidx]} />, <Line4 day={holiday ? '공휴일' : getDayType(time.getDay())} end={end[3][endidx]} />];
     const totalmap = <img src='img/종합노선도(Metro Line Map).png' alt='종합노선도'></img>
 
@@ -57,7 +57,7 @@ const Select = () => {
         <>
             <div><strong className={main.left + ' ' + main.xlarge}>출발역과 방향을 선택하세요</strong>{linebtns}</div>
             <div className={main.up}>
-                <span className={main.large + ' ' + main.left}><strong>{getDayType(time.getDay())} {timeformat(time)}</strong>
+                <span className={main.large + ' ' + main.left}><strong>{getDayType(time.getDay()).split(':')[0]} {timeformat(time)}</strong>
                 <span className={main.blank}></span><span className={main.normal}>공휴일</span>
                 <input type='checkbox' onChange={() => toggleholiday(!holiday)} checked={holiday} /></span>
                 {line !== -1 && endbtns[line]}
