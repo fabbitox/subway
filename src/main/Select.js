@@ -35,7 +35,7 @@ const Select = () => {
         </button>
     );
     const [endidx, setend] = useState(-1);
-    const end = [['노포:134', '신평:101', '다대포해수욕장:095'], ['장산:201', '광안:209', '전포:219', '호포:239', '양산:243'],
+    const end = [['노포:134', '신평:101', '다대포해수욕장:095'], ['장산:201', '광안:209', '전포:218', '호포:239', '양산:243'],
         ['수영:301', '대저:317'], ['안평:414', '미남:401']];
     const endbtns = end.map((lineend, lineidx) => lineend.map(
         (item, idx) => <button key={item} onClick={() => setend(idx)}
@@ -45,7 +45,7 @@ const Select = () => {
         </button>)
     );
     const [holiday, toggleholiday] = useState(false);
-    const linemap = [<Line1 day={holiday ? '공휴일:4' : getDayType(time.getDay())} end={end[0][endidx]} />, <Line2 day={holiday ? '공휴일' : getDayType(time.getDay())} end={end[1][endidx]} />,
+    const linemap = [<Line1 day={holiday ? '공휴일:4' : getDayType(time.getDay())} end={end[0][endidx]} />, <Line2 day={holiday ? '공휴일:4' : getDayType(time.getDay())} end={end[1][endidx]} />,
     <Line3 day={holiday ? '공휴일' : getDayType(time.getDay())} end={end[2][endidx]} />, <Line4 day={holiday ? '공휴일' : getDayType(time.getDay())} end={end[3][endidx]} />];
     const totalmap = <img src='img/종합노선도(Metro Line Map).png' alt='종합노선도'></img>
 
