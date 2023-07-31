@@ -3,7 +3,7 @@ button.station {
     height: 1.5vmax;
     border-radius: 50%;
     background-color: transparent;
-    border: 2px solid #286fdb;
+    border: 0.15vmax solid #286fdb;
     margin: 14.7vmax 0 12vmax;
     padding: 0;
 }
