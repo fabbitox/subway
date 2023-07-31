@@ -1,8 +1,8 @@
 import style from './Line3.module.css';
 
-const Line3 = () => {
+const Line3 = (props) => {
     const select = (code) => {
-        console.log('select', code);
+        console.log('select', props.day, props.end.split(':')[1], code);
     }
 
     let buttons = [];

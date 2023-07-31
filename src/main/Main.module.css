@@ -77,3 +77,10 @@ html {
 .xlarge {
     font-size: 1.3rem;
 }
+.blank {
+    padding-left: 3rem;
+}
+input[type="checkbox"] {
+    width: 0.75rem;
+    height: 0.75rem;
+}

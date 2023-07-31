@@ -1,8 +1,8 @@
 import style from './Line4.module.css';
 
-const Line4 = () => {
+const Line4 = (props) => {
     const select = (code) => {
-        console.log('select', code);
+        console.log('select', props.day, props.end.split(':')[1], code);
     }
 
     let buttons = [];
