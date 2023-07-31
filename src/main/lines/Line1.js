@@ -2,11 +2,13 @@ import style from './Line1.module.css';
 import axios from 'axios';
 import Arrival from '../Arrival';
 import { useState } from 'react';
-import main from '../Main.module.css';
+import Station from '../Station';
 
 const Line1 = (props) => {
     const [arrival3, setArrival] = useState([]);
+    const [code, setCode] = useState(0);
     const select = (code) => {
+        setCode(code);
         console.log(`http://10.125.121.185:8080/station/${props.day.split(':')[1]}/${props.end.split(':')[1]}/${code}`);
         axios.get(`http://10.125.121.185:8080/station/${props.day.split(':')[1]}/${props.end.split(':')[1]}/${code}`)
             .then(response => {
@@ -45,16 +47,12 @@ const Line1 = (props) => {
                     return false;
                 });
                 if (arrivals.length >= 3) {
-                    console.log(arrivals[0], arrivals[1], arrivals[2]);
                     setArrival(arrivals.slice(0, 3));
                 }
                 else {
-                    console.log(arrivals[0]);
                     setArrival(arrivals);
                 }
-            }).catch(error => {
-                console.log(error);
-            });
+            }).catch(error => console.log(error));
     }
 
     let buttons = [];
@@ -67,10 +65,11 @@ const Line1 = (props) => {
 
     return (
         <div>
-            <div className={style.map + ' ' + main.up}>
+            <div className={style.map}>
                 {buttonrow}
             </div>
             {arrival3.length !== 0 && <Arrival arrival={arrival3} />}
+            {code !== 0 && <Station code={code} />}
         </div>
     );
 }

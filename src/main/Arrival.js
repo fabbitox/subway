@@ -15,7 +15,7 @@ const Arrival = (props) => {
     });
 
     return (
-        <span className={style.left}>{arrivals}</span>
+        <div className={style.left + ' ' + style.up + ' ' + style.down}>{arrivals}</div>
     )
 }
 

@@ -2,7 +2,7 @@ html {
     font-size: 18px;
 }
 .left {
-    margin: 15%;
+    margin: 0 15%;
 }
 @media (max-width: 1280px) {
     html {
@@ -14,7 +14,7 @@ html {
         font-size: 13px;
     }
     .left {
-        margin: 8%;
+        margin: 0 8%;
     }
 }
 @media (max-width: 768px) {
@@ -22,7 +22,7 @@ html {
         font-size: 11px;
     }
     .left {
-        margin: 3rem;
+        margin: 0 3rem;
     }
 }
 @media (orientation: portrait) {
@@ -44,12 +44,12 @@ html {
             font-size: 14px;
         }
         .left {
-            margin: 12%;
+            margin: 0 12%;
         }
     }
     @media (max-height: 1024px) {
         .left {
-            margin: 9%;
+            margin: 0 9%;
         }
     }
     @media (max-height: 768px) {
@@ -57,13 +57,16 @@ html {
             font-size: 11px;
         }
         .left {
-            margin: 3rem;
+            margin: 0 3rem;
         }
     }
 }
 
 .up {
     margin-bottom: 1rem;
+}
+.down {
+    margin-top: 1rem;
 }
 .center {
     text-align: center;
