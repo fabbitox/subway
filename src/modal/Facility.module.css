@@ -1,0 +1,17 @@
+.large {
+    display: block;
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+}
+.vspace {
+    margin-top: 3%;
+}
+.center {
+    text-align: center;
+}
+td {
+    padding: 0.1rem 0.8rem;
+}
+.vs {
+    padding-top: 0.5rem;
+}

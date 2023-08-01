@@ -19,11 +19,11 @@ const SpanBtn = styled.span`
 const Station = (props) => {
     const code = props.code;
     const color = props.color;
-    const [infotag, setInfo] = useState(0);
+    const [infotag, setInfo] = useState(<></>);
     const [show, toggle] = useState(false);
     useEffect(() => {
         axios.get(`http://10.125.121.185:8080/station/${code}`).then(response => {
-            console.log(response.data);
+            // console.log(response.data);
             const info = response.data[0];
             setInfo(<div>
                 <div><ColorSpan color={color}>{info.line_num}</ColorSpan><span className={style.blank}></span>
@@ -38,7 +38,7 @@ const Station = (props) => {
     return (
         <div className={style.vspace}>
             <strong className={style.large}>역 정보</strong>
-            {infotag !== 0 && infotag}
+            {infotag}
         </div>
     );
 }
