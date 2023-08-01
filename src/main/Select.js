@@ -56,7 +56,7 @@ const Select = () => {
     const lines = ['1호선', '2호선', '3호선', '4호선'];
     const linebtns = lines.map((item, idx) =>
         <LineButton key={lines[idx]} line={idx} onClick={() => setline(idx)}
-            className={main.large} sel={idx === line}>
+            className={main.large} sel={idx === line ? "true" : undefined}>
             {item}
         </LineButton>
     );
@@ -65,7 +65,7 @@ const Select = () => {
         ['수영:301', '대저:317'], ['안평:414', '미남:401']];
     const endbtns = end.map((lineend, lineidx) => lineend.map((item, idx) =>
         <EndButton key={item} line={lineidx} onClick={() => setend(idx)}
-            className={main.normal} sel={idx === endidx}>
+            className={main.normal} sel={idx === endidx ? "true" : undefined}>
             {item.split(':')[0]}
         </EndButton>)
     );
