@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import main from './Main.module.css';
+import main from '../main/Main.module.css';
 
 const Station = (props) => {
     const code = props.code;

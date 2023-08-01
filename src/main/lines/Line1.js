@@ -1,9 +1,9 @@
 import style from './Line1.module.css';
 import axios from 'axios';
-import Arrival from '../Arrival';
+import Arrival from '../../modal/Arrival';
 import { useState } from 'react';
-import Station from '../Station';
-import Modal from '../Modal';
+import Station from '../../modal/Station';
+import Modal from '../../modal/Modal';
 
 const Line1 = (props) => {
     const [arrival3, setArrival] = useState([]);

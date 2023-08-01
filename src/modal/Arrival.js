@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './Main.module.css'
+import style from '../main/Main.module.css'
 
 const Arrival = (props) => {
     let arrivals = props.arrival;
