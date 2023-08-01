@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '../main/Main.module.css'
+import style from './Arrival.module.css'
 
 const Arrival = (props) => {
     let arrivals = props.arrival;
@@ -15,7 +15,10 @@ const Arrival = (props) => {
     });
 
     return (
-        <div className={style.left + ' ' + style.up + ' ' + style.down}>{arrivals}</div>
+        <div>
+            <strong className={style.large}>열차 정보</strong>
+            <div>{arrivals}</div>
+        </div>
     )
 }
 

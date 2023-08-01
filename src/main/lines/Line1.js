@@ -11,7 +11,7 @@ const Line1 = (props) => {
     const select = (code) => {
         setOpen(true);
         setCode(code);
-        console.log(`http://10.125.121.185:8080/station/${props.day.split(':')[1]}/${props.end.split(':')[1]}/${code}`);
+        // console.log(`http://10.125.121.185:8080/station/${props.day.split(':')[1]}/${props.end.split(':')[1]}/${code}`);
         axios.get(`http://10.125.121.185:8080/station/${props.day.split(':')[1]}/${props.end.split(':')[1]}/${code}`)
             .then(response => {
                 let arrivals = response.data;
@@ -31,7 +31,7 @@ const Line1 = (props) => {
                     }
                     return ah - bh;
                 });
-                console.log(arrivals);
+                // console.log(arrivals);
                 arrivals = arrivals.filter((item) => {
                     const time = new Date();
                     const hournow = time.getHours();

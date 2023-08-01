@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import main from '../main/Main.module.css';
+import style from './Station.module.css';
 
 const Station = (props) => {
     const code = props.code;
@@ -11,8 +11,8 @@ const Station = (props) => {
         axios.get(`http://10.125.121.185:8080/station/${code}`).then(response => {
             console.log(response.data);
             const info = response.data[0];
-            setInfo(<div className={main.left}>
-                <div><span>{info.line_num}</span><span className={main.blank}></span><span>{info.stationcode} {info.stationname_plus}({info.english_name})</span></div>
+            setInfo(<div>
+                <div><span>{info.line_num}</span><span className={style.blank}></span><span>{info.stationcode} {info.stationname_plus}({info.english_name})</span></div>
                 <div>전화번호: {info.tel}</div>
                 <div>주소: {info.address}</div>
                 <div>유래: {info.history}</div>
@@ -20,7 +20,10 @@ const Station = (props) => {
         }).catch(error => console.log(error));
     }, [code]);
     return (
-        <>{infotag !== 0 && infotag}</>
+        <div className={style.vspace}>
+            <strong className={style.large}>역 정보</strong>
+            {infotag !== 0 && infotag}
+        </div>
     );
 }
 

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const colors = ['#f7612f', '#20ac15', '#b58942', '#286fdb'];
 const Container = styled.div`
-    width: 80%;
-    height: 90%;
+    width: 70%;
+    height: 80%;
     z-index: 10;
     position: absolute;
     top: 5%;
@@ -12,6 +12,7 @@ const Container = styled.div`
     background-color: white;
     border-radius: 0.8rem;
     border: 0.3rem solid ${props => colors[props.line]};
+    padding: 2% 5%;
 `;
 const CloseBtn = styled.button`
     position: absolute;
@@ -31,7 +32,7 @@ const CloseBtn = styled.button`
     &:hover {
         background-color: white;
         color: ${props => colors[props.line]};
-        border: 0.15rem solid ${props => colors[props.line]};
+        border: 0.2rem solid ${props => colors[props.line]};
     }
 `;
 
@@ -40,11 +41,14 @@ const Modal = (props) => {
     const close = () => {
         setOpen(false);
     }
+    const block = (event) => {
+        event.stopPropagation();
+    };
     const line = props.line;
 
     return (
         <div className={style.out} onClick={close}>
-            <Container line={line - 1}>
+            <Container line={line - 1} onClick={block}>
                 <CloseBtn line={line - 1} onClick={close}>X</CloseBtn>
                 {props.content}
             </Container>
