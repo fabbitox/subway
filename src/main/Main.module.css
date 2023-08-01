@@ -81,7 +81,7 @@ html {
     font-size: 1.3rem;
 }
 .blank {
-    padding-top: 3rem;
+    padding: 0 2rem;
 }
 input[type="checkbox"] {
     width: 0.75rem;

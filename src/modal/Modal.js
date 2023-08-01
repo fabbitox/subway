@@ -4,10 +4,10 @@ import styled from 'styled-components';
 const colors = ['#f7612f', '#20ac15', '#b58942', '#286fdb'];
 const Container = styled.div`
     width: 70%;
-    height: 80%;
+    height: 84%;
     z-index: 10;
     position: absolute;
-    top: 5%;
+    top: 3%;
     left: 10%;
     background-color: white;
     border-radius: 0.8rem;

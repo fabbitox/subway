@@ -2,12 +2,13 @@ import style from './Line1.module.css';
 import axios from 'axios';
 import Arrival from '../../modal/Arrival';
 import { useState } from 'react';
-import Station from '../../modal/Station';
 import Modal from '../../modal/Modal';
+import Station from '../../modal/Station';
 
 const Line1 = (props) => {
     const [arrival3, setArrival] = useState([]);
     const [code, setCode] = useState(0);
+    const [open, setOpen] = useState(false);
     const select = (code) => {
         setOpen(true);
         setCode(code);
@@ -64,9 +65,8 @@ const Line1 = (props) => {
             key={134 - i} onClick={() => select(134 - i)}></button>
         );
     const buttonrow = <div className={style.row}>{buttons}</div>;
-    const [open, setOpen] = useState(false);
     const info = <>{arrival3.length !== 0 && <Arrival arrival={arrival3} />}
-    {code !== 0 && <Station code={code} />}</>;
+    {code !== 0 && <Station code={code} color='#d53f0d' />}</>;
 
     return (
         <div>

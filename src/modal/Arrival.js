@@ -11,12 +11,12 @@ const Arrival = (props) => {
             arrivehour = 24;
         const arrivemin = parseInt(arrive[1]);
         const remain = (arrivehour - time.getHours()) * 60 + arrivemin - time.getMinutes();
-        return <span key={item}>{`${item}(${remain}분 후)`}<span className={style.blank}></span></span>
+        return <span key={item} className={style.large}>{`${item}(${remain}분 후)`}<span className={style.blank}></span></span>
     });
 
     return (
-        <div>
-            <strong className={style.large}>열차 정보</strong>
+        <div className={style.center}>
+            <strong className={style.xlarge}>열차 정보</strong>
             <div>{arrivals}</div>
         </div>
     )
