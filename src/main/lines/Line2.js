@@ -2,10 +2,13 @@ import style from './Line2.module.css';
 import axios from 'axios';
 import Arrival from '../Arrival';
 import { useState } from 'react';
+import Modal from '../Modal';
 
 const Line2 = (props) => {
     const [arrival3, setArrival] = useState([]);
+    const [open, setOpen] = useState(false);
     const select = (code) => {
+        setOpen(true);
         console.log(`http://10.125.121.185:8080/station/${props.day.split(':')[1]}/${props.end.split(':')[1]}/${code}`);
         axios.get(`http://10.125.121.185:8080/station/${props.day.split(':')[1]}/${props.end.split(':')[1]}/${code}`)
             .then(response => {
@@ -66,6 +69,7 @@ const Line2 = (props) => {
                 {buttonrow}
             </div>
             {arrival3.length !== 0 && <Arrival arrival={arrival3} />}
+            {open && <Modal open={setOpen} line={2} />}
         </div>
     );
 }
