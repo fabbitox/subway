@@ -1,4 +1,4 @@
-import main from './Main.module.css';
+import mainst from './Main.module.css';
 import { useState, useEffect } from 'react';
 import Line1 from './lines/Line1';
 import Line2 from './lines/Line2';
@@ -56,7 +56,7 @@ const Select = () => {
     const lines = ['1호선', '2호선', '3호선', '4호선'];
     const linebtns = lines.map((item, idx) =>
         <LineButton key={lines[idx]} line={idx} onClick={() => setline(idx)}
-            className={main.large} sel={idx === line ? "true" : undefined}>
+            className={mainst.large} sel={idx === line ? "true" : undefined}>
             {item}
         </LineButton>
     );
@@ -65,7 +65,7 @@ const Select = () => {
         ['수영:301', '대저:317'], ['안평:414', '미남:401']];
     const endbtns = end.map((lineend, lineidx) => lineend.map((item, idx) =>
         <EndButton key={item} line={lineidx} onClick={() => setend(idx)}
-            className={main.normal} sel={idx === endidx ? "true" : undefined}>
+            className={mainst.normal} sel={idx === endidx ? "true" : undefined}>
             {item.split(':')[0]}
         </EndButton>)
     );
@@ -80,10 +80,10 @@ const Select = () => {
 
     return (
         <>
-            <div><strong className={main.left + ' ' + main.xlarge}>출발역과 방향을 선택하세요</strong>{linebtns}</div>
-            <div className={main.up}>
-                <span className={main.large + ' ' + main.left}><strong>{getDayType(time.getDay()).split(':')[0]} {timeformat(time)}</strong>
-                <span className={main.blank}></span><span className={main.normal}>공휴일</span>
+            <div><strong className={mainst.left + ' ' + mainst.xlarge}>출발역과 방향을 선택하세요</strong>{linebtns}</div>
+            <div className={mainst.up}>
+                <span className={mainst.large + ' ' + mainst.left}><strong>{getDayType(time.getDay()).split(':')[0]} {timeformat(time)}</strong>
+                <span className={mainst.blank}></span><span className={mainst.normal}>공휴일</span>
                 <input type='checkbox' onChange={() => toggleholiday(!holiday)} checked={holiday} /></span>
                 {line !== -1 && endbtns[line]}
             </div>

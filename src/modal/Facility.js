@@ -1,7 +1,8 @@
 import React from 'react'
 import axios from 'axios'
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 import style from './Facility.module.css'
+import modalst from './Modal.module.css'
 
 const Facility = (props) => {
     const code = props.code;
@@ -23,18 +24,18 @@ const Facility = (props) => {
                 <span>승강장: {info.above_under}</span> <span>{info.floor}층</span>{info.connector ? <span>, 연결</span> : <></>}
                 <table><tbody>
                     {<tr>{names1.map(item => <td key={item} className={style.vs}>{item}</td>)}</tr>}
-                    {<tr>{facil1.map((item, idx) => <td key={'facil' + idx} className={style.center}>{isAvailable(item)}</td>)}</tr>}
+                    {<tr>{facil1.map((item, idx) => <td key={'facil' + idx} className={modalst.center}>{isAvailable(item)}</td>)}</tr>}
                     {<tr>{names2.map(item => <td key={item} className={style.vs}>{item}</td>)}</tr>}
-                    {<tr>{facil2.map((item, idx) => <td key={'facil' + idx} className={style.center}>{isAvailable(item)}</td>)}</tr>}
+                    {<tr>{facil2.map((item, idx) => <td key={'facil' + idx} className={modalst.center}>{isAvailable(item)}</td>)}</tr>}
                     {<tr>{names3.map(item => <td key={item} className={style.vs}>{item}</td>)}</tr>}
-                    {<tr>{facil3.map((item, idx) => <td key={'facil' + idx} className={style.center}>{isAvailable(item)}</td>)}</tr>}
+                    {<tr>{facil3.map((item, idx) => <td key={'facil' + idx} className={modalst.center}>{isAvailable(item)}</td>)}</tr>}
                 </tbody></table>
             </div>);
         }).catch(error => console.log(error));
     }, [code]);
     return (
-        <div className={style.vspace}>
-            <strong className={style.large}>편의시설 정보</strong>
+        <div className={modalst.vspace}>
+            <strong className={modalst.large}>편의시설 정보</strong>
             {infotag}
         </div>
     )

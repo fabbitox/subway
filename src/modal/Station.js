@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import style from './Station.module.css';
 import styled from 'styled-components';
+import modalst from './Modal.module.css';
 
 const ColorSpan = styled.span`
     font-weight: bold;
@@ -26,7 +26,7 @@ const Station = (props) => {
             // console.log(response.data);
             const info = response.data[0];
             setInfo(<div>
-                <div><ColorSpan color={color}>{info.line_num}</ColorSpan><span className={style.blank}></span>
+                <div><ColorSpan color={color}>{info.line_num}</ColorSpan><span className={modalst.blank}></span>
                 <span>{info.stationcode} <ColorSpan color={color}>{info.stationname_plus}</ColorSpan>({info.english_name})</span></div>
                 <div><strong>전화번호</strong>: {info.tel}</div>
                 <div><strong>주소</strong>: {info.address}</div>
@@ -36,8 +36,8 @@ const Station = (props) => {
         }).catch(error => console.log(error));
     }, [code, color, show]);
     return (
-        <div className={style.vspace}>
-            <strong className={style.large}>역 정보</strong>
+        <div className={modalst.vspace}>
+            <strong className={modalst.large}>역 정보</strong>
             {infotag}
         </div>
     );
