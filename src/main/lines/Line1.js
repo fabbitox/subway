@@ -1,10 +1,10 @@
 import style from './Line1.module.css';
 import axios from 'axios';
-import Arrival from '../../modal/Arrival';
 import { useState } from 'react';
-import Modal from '../../modal/Modal';
-import Station from '../../modal/Station';
 import get3Arrivals from './Line';
+import Modal from '../../modal/Modal';
+import Arrival from '../../modal/Arrival';
+import Station from '../../modal/Station';
 import Facility from '../../modal/Facility';
 
 const Line1 = (props) => {

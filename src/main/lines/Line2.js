@@ -1,10 +1,11 @@
 import style from './Line2.module.css';
 import axios from 'axios';
-import Arrival from '../../modal/Arrival';
 import { useState } from 'react';
-import Modal from '../../modal/Modal';
-import Station from '../../modal/Station';
 import get3Arrivals from './Line';
+import Modal from '../../modal/Modal';
+import Arrival from '../../modal/Arrival';
+import Station from '../../modal/Station';
+import Facility from '../../modal/Facility';
 
 const Line2 = (props) => {
     const [arrival3, setArrival] = useState([]);
@@ -13,7 +14,6 @@ const Line2 = (props) => {
     const select = (code) => {
         setOpen(true);
         setCode(code);
-        console.log(`http://10.125.121.185:8080/station/${props.day.split(':')[1]}/${props.end.split(':')[1]}/${code}`);
         axios.get(`http://10.125.121.185:8080/station/${props.day.split(':')[1]}/${props.end.split(':')[1]}/${code}`)
             .then(response => {
                 const arrivals = get3Arrivals(response.data);
@@ -34,7 +34,7 @@ const Line2 = (props) => {
         );
     const buttonrow = <div className={style.row}>{buttons}</div>;
     const info = <>{arrival3.length !== 0 && <Arrival arrival={arrival3} />}
-    {code !== 0 && <Station code={code} color='#008a00' />}</>;
+    {code !== 0 && <Station code={code} color='#008a00' />}{code !== 0 && <Facility code={code} />}</>;
 
     return (
         <div>
