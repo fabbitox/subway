@@ -23,7 +23,6 @@ const Station = (props) => {
     const [show, toggle] = useState(false);
     useEffect(() => {
         axios.get(`http://10.125.121.185:8080/station/${code}`).then(response => {
-            // console.log(response.data);
             const info = response.data[0];
             setInfo(<div>
                 <div><ColorSpan color={color}>{info.line_num}</ColorSpan><span className={modalst.blank}></span>

@@ -6,7 +6,6 @@ const colors = ['#f7612f', '#20ac15', '#b58942', '#286fdb'];
 const Container = styled.div`
     width: 70%;
     height: 84%;
-    z-index: 10;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -42,7 +41,6 @@ const CloseBtn = styled.button`
         color: ${props => colors[props.line]};
         border: 0.2rem solid ${props => colors[props.line]};
     }
-    z-index: 11;
 `;
 
 const Modal = (props) => {
@@ -68,10 +66,10 @@ const Modal = (props) => {
     const line = props.line;
     return (
         <div className={style.out} onClick={close}>
-            <CloseBtn line={line - 1} onClick={close}>X</CloseBtn>
             <Container line={line - 1} onClick={block}>
                 {props.content}
             </Container>
+            <CloseBtn line={line - 1} onClick={close}>X</CloseBtn>
         </div>
     )
 }
