@@ -24,7 +24,7 @@ const Container = styled.div`
 const CloseBtn = styled.button`
     position: fixed;
     right: 12%;
-    top: 6%;
+    top: 7%;
     width: 2rem;
     height: 2rem;
     text-align: center;

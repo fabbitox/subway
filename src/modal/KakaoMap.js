@@ -7,7 +7,7 @@ const KakaoMap = (props) => {
     useEffect(() => {
         var mapContainer = document.getElementById('station-map'), // 지도를 표시할 div
             mapOption = {
-                center: new kakao.maps.LatLng(33.450701, 126.570667),
+                center: new kakao.maps.LatLng(35.2296168581211, 129.089342280899),
                 level: 3 // 지도의 확대 레벨
             };
 
@@ -22,16 +22,17 @@ const KakaoMap = (props) => {
                     map: map,
                     position: coords
                 });
-
+                console.log(coords);
                 map.setCenter(coords);
             }
         });
-    }, []);
+    }, [addr]);
 
     return (
         <div id='station-map' style={{
-            width: '30vmax',
-            Height: '30vmax'
+            width: '25vmax',
+            height: '25vmax',
+            marginLeft: '1vmax'
         }}></div>
     )
 }

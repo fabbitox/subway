@@ -18,19 +18,19 @@ const commonButtonStyles = `
 const colors = ['#f7612f', '#20ac15', '#b58942', '#286fdb'];
 const LineButton = styled.button`
     ${commonButtonStyles}
-    background-color: ${props => colors[props.line]};
-    border: ${props => props.sel ? '0.2rem solid #33333366' : 'none'};
+    background-color: ${props => colors[props.$line]};
+    border: ${props => props.$sel ? '0.2rem solid #33333366' : 'none'};
 `;
 const EndButton = styled.button`
     ${commonButtonStyles}
-    background-color: ${props => colors[props.line]};
-    border: ${props => props.sel ? '0.2rem solid #33333366' : 'none'};
+    background-color: ${props => colors[props.$line]};
+    border: ${props => props.$sel ? '0.2rem solid #33333366' : 'none'};
     height: 2.1rem;
     &:hover {
         font-weight: bold;
         background-color: white;
-        color: ${props => colors[props.line]};
-        border: 0.2rem solid ${props => colors[props.line]};
+        color: ${props => colors[props.$line]};
+        border: 0.2rem solid ${props => colors[props.$line]};
     }
 `;
 
@@ -55,8 +55,8 @@ const Select = () => {
     const [line, setline] = useState(-1);
     const lines = ['1호선', '2호선', '3호선', '4호선'];
     const linebtns = lines.map((item, idx) =>
-        <LineButton key={lines[idx]} line={idx} onClick={() => setline(idx)}
-            className={mainst.large} sel={idx === line ? "true" : undefined}>
+        <LineButton key={lines[idx]} $line={idx} onClick={() => setline(idx)}
+            className={mainst.large} $sel={idx === line ? "true" : undefined}>
             {item}
         </LineButton>
     );
@@ -64,8 +64,8 @@ const Select = () => {
     const end = [['노포:134', '신평:101', '다대포해수욕장:095'], ['장산:201', '광안:209', '전포:218', '호포:239', '양산:243'],
         ['수영:301', '대저:317'], ['안평:414', '미남:401']];
     const endbtns = end.map((lineend, lineidx) => lineend.map((item, idx) =>
-        <EndButton key={item} line={lineidx} onClick={() => setend(idx)}
-            className={mainst.normal} sel={idx === endidx ? "true" : undefined}>
+        <EndButton key={item} $line={lineidx} onClick={() => setend(idx)}
+            className={mainst.normal} $sel={idx === endidx ? "true" : undefined}>
             {item.split(':')[0]}
         </EndButton>)
     );

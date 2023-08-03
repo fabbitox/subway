@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
 import modalst from './Modal.module.css';
+import KakaoMap from './KakaoMap';
 
 const ColorSpan = styled.span`
     font-weight: bold;
@@ -24,13 +25,16 @@ const Station = (props) => {
     useEffect(() => {
         axios.get(`http://10.125.121.185:8080/station/${code}`).then(response => {
             const info = response.data[0];
-            setInfo(<div>
-                <div><ColorSpan color={color}>{info.line_num}</ColorSpan><span className={modalst.blank}></span>
-                <span>{info.stationcode} <ColorSpan color={color}>{info.stationname_plus}</ColorSpan>({info.english_name})</span></div>
-                <div><strong>전화번호</strong>: {info.tel}</div>
-                <div><strong>주소</strong>: {info.address}</div>
-                <SpanBtn color={color} onClick={() => toggle(!show)}>유래</SpanBtn>
-                {show ? <span>: {info.history}</span> : <span> ← Click!</span>}
+            setInfo(<div style={{display: 'flex'}}>
+                <div style={{width: '45vmax'}}>
+                    <div><ColorSpan color={color}>{info.line_num}</ColorSpan><span className={modalst.blank}></span>
+                    <span>{info.stationcode} <ColorSpan color={color}>{info.stationname_plus}</ColorSpan>({info.english_name})</span></div>
+                    <div><strong>전화번호</strong>: {info.tel}</div>
+                    <div><strong>주소</strong>: {info.address}</div>
+                    <SpanBtn color={color} onClick={() => toggle(!show)}>유래</SpanBtn>
+                    {show ? <span>: {info.history}</span> : <span> ← Click!</span>}
+                </div>
+                <KakaoMap addr={info.address} />
             </div>);
         }).catch(error => console.log(error));
     }, [code, color, show]);
