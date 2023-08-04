@@ -1,8 +1,8 @@
 import style from './Modal.module.css';
 import styled from 'styled-components';
 import { useEffect } from 'react';
+import colors from '../colors';
 
-const colors = ['#f7612f', '#20ac15', '#b58942', '#286fdb'];
 const Container = styled.div`
     width: 70%;
     height: 84%;
@@ -66,10 +66,10 @@ const Modal = (props) => {
     const line = props.line;
     return (
         <div className={style.out} onClick={close}>
-            <Container line={line - 1} onClick={block}>
+            <Container line={line} onClick={block}>
                 {props.content}
             </Container>
-            <CloseBtn line={line - 1} onClick={close}>X</CloseBtn>
+            <CloseBtn line={line} onClick={close}>X</CloseBtn>
         </div>
     )
 }
