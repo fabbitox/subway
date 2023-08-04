@@ -13,7 +13,7 @@ const rowMar = ['0 0.8%', '0 0.7% 0 0.6%', '0 2% 0 1.4%', '0 2.4% 0 2.5%'];
 const mapUrl = ['./img/line1.png', './img/line2.png', './img/line3.png', './img/line4.png'];
 const mapMar = ['0', '0', '0 13%', '0 23%'];
 
-const StationButton = styled.button`
+const StationBtnSt = styled.button`
     width: ${props => btnW[props.$line]};
     height: ${props => btnH[props.$line]};
     border: 0.15vmax solid ${props => colors[props.$line]};
@@ -27,7 +27,7 @@ const StationButton = styled.button`
     }
 `;
 
-const BigButton = styled(StationButton)`
+const BigBtnSt = styled(StationBtnSt)`
     width: ${props => bigW[props.$line]};
     height: ${props => bigH[props.$line]};
     margin: ${props => bigMar[props.$line]};
@@ -47,4 +47,10 @@ const MapDiv = styled.div`
     margin: ${props => mapMar[props.$line]};
 `;
 
-export {StationButton, BigButton, ButtonRow, MapDiv};
+const StationButton = (props) => {
+    return props.big ?
+    <BigBtnSt $line={props.line} onClick={props.onClick} />
+    : <StationBtnSt $line={props.line} onClick={props.onClick} />;
+};
+
+export {StationButton, ButtonRow, MapDiv};
