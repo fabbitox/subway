@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
-import { StationButton, ButtonRow, MapDiv } from './LineComponents';
+import { ButtonRow, MapDiv } from './LineComponents';
 import Modal from '../modal/Modal';
 import Arrival from '../modal/Arrival';
 import Station from '../modal/Station';
@@ -59,34 +59,12 @@ const LineMap = (props) => {
                 }
             }).catch(error => console.log(error));
     }
-    let lineBtns = [];
-    let buttons = [];
-    for (let i = 0; i < 40; i++)
-        buttons.push(<StationButton big={((i >= 9 && i <= 11) || i === 15)}
-        line={line} key={134 - i} onClick={() => select(134 - i)} />);
-    lineBtns.push(buttons);
-    buttons = [];
-    for (let i = 0; i < 43; i++)
-        buttons.push(<StationButton big={(i === 4 || i === 7 || i === 18 || i === 26 || i === 32)}
-        line={line} key={201 + i} onClick={() => select(201 + i)} />);
-    lineBtns.push(buttons);
-    buttons = [];
-    for (let i = 0; i < 17; i++)
-        buttons.push(<StationButton big={(i % 4 === 0 || i === 5)}
-        line={line} key={301 + i} onClick={() => select(301 + i)} />);
-    lineBtns.push(buttons);
-    buttons = [];
-    for (let i = 0; i < 14; i++)
-        buttons.push(<StationButton big={(i >= 12)}
-        line={line} key={414 - i} onClick={() => select(414 - i)} />);
-    lineBtns.push(buttons);
-    const buttonrow = <ButtonRow $line={line}>{lineBtns[line]}</ButtonRow>
     const info = <>{arrival3.length !== 0 && <Arrival arrival={arrival3} />}
     {code !== 0 && <Station code={code} color={colors[line]} />}{code !== 0 && <Facility code={code} />}</>;
     return (
         <div>
             <MapDiv $line={line}>
-                {buttonrow}
+                <ButtonRow line={line} onClick={select} />
             </MapDiv>
             {open && <Modal open={setOpen} line={line} content={info} />}
         </div>

@@ -33,7 +33,7 @@ const BigBtnSt = styled(StationBtnSt)`
     margin: ${props => bigMar[props.$line]};
 `;
 
-const ButtonRow = styled.div`
+const BtnRowSt = styled.div`
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
@@ -53,4 +53,31 @@ const StationButton = (props) => {
     : <StationBtnSt $line={props.line} onClick={props.onClick} />;
 };
 
-export {StationButton, ButtonRow, MapDiv};
+const ButtonRow = (props) => {
+    const select = props.onClick;
+    const line = props.line;
+    let lineBtns = [];
+    let buttons = [];
+    for (let i = 0; i < 40; i++)
+        buttons.push(<StationButton big={((i >= 9 && i <= 11) || i === 15)}
+        line={line} key={134 - i} onClick={() => select(134 - i)} />);
+    lineBtns.push(buttons);
+    buttons = [];
+    for (let i = 0; i < 43; i++)
+        buttons.push(<StationButton big={(i === 4 || i === 7 || i === 18 || i === 26 || i === 32)}
+        line={line} key={201 + i} onClick={() => select(201 + i)} />);
+    lineBtns.push(buttons);
+    buttons = [];
+    for (let i = 0; i < 17; i++)
+        buttons.push(<StationButton big={(i % 4 === 0 || i === 5)}
+        line={line} key={301 + i} onClick={() => select(301 + i)} />);
+    lineBtns.push(buttons);
+    buttons = [];
+    for (let i = 0; i < 14; i++)
+        buttons.push(<StationButton big={(i >= 12)}
+        line={line} key={414 - i} onClick={() => select(414 - i)} />);
+    lineBtns.push(buttons);
+    return <BtnRowSt $line={line}>{lineBtns[line]}</BtnRowSt>;
+}
+
+export {ButtonRow, MapDiv};
