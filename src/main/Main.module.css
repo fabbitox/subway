@@ -101,3 +101,25 @@ input[type="checkbox"] {
 img {
     width: 100%;
 }
+
+a.login {
+    position: fixed;
+    top: 2%;
+    right: 3%;
+    background-color: white;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+a:link {
+    color: #00cc33;
+}
+a:visited {
+    color : #9966ff;
+}
+a:hover {
+    color : #cccc00;
+}
+a:active {
+    color : #33ff66;
+}
