@@ -1,9 +1,5 @@
 import mainst from './Main.module.css';
 import { useState, useEffect } from 'react';
-// import Line1 from './lines/Line1';
-// import Line2 from './lines/Line2';
-// import Line3 from './lines/Line3';
-// import Line4 from './lines/Line4';
 import styled from 'styled-components';
 import colors from '../colors';
 import LineMap from './LineMap';
@@ -71,8 +67,6 @@ const Select = () => {
         </EndButton>)
     );
     const [holiday, toggleholiday] = useState(false);
-    // const linemap = [<Line1 day={holiday ? '공휴일:4' : getDayType(time.getDay())} end={end[0][endidx]} />, <Line2 day={holiday ? '공휴일:4' : getDayType(time.getDay())} end={end[1][endidx]} />,
-    // <Line3 day={holiday ? '공휴일' : getDayType(time.getDay())} end={end[2][endidx]} />, <Line4 day={holiday ? '공휴일' : getDayType(time.getDay())} end={end[3][endidx]} />];
     const totalmap = <img src='img/종합노선도(Metro Line Map).png' alt='종합노선도'></img>
 
     useEffect(() => {
