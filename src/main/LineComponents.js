@@ -41,7 +41,7 @@ const BtnRowSt = styled.div`
     margin: ${props => rowMar[props.$line]};
 `;
 
-const MapDiv = styled.div`
+const MapDivSt = styled.div`
     background-image: url(${props => mapUrl[props.$line]});
     background-size: contain;
     margin: ${props => mapMar[props.$line]};
@@ -80,4 +80,10 @@ const ButtonRow = (props) => {
     return <BtnRowSt $line={line}>{lineBtns[line]}</BtnRowSt>;
 }
 
-export {ButtonRow, MapDiv};
+const MapDiv = (props) => {
+    return <MapDivSt $line={props.line}>
+        <ButtonRow line={props.line} onClick={props.onClick} />
+    </MapDivSt>
+}
+
+export default MapDiv;
