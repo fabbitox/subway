@@ -22,7 +22,7 @@ const KakaoMap = (props) => {
                     map: map,
                     position: coords
                 });
-                console.log(coords);
+                // console.log(coords);
                 map.setCenter(coords);
             }
         });

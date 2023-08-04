@@ -2,16 +2,16 @@ import styled from 'styled-components';
 import colors from '../colors';
 
 const color2 = ['#099fd1', '#e054db', '#3b77be', '#d89125'];
-const btnW = ['1.7%', '1.6%', '2.1%', '3%'];
-const btnH = ['1.7vmax', '1.6vmax', '1.428vmax', '1.5vmax'];
-const btnMar = ['15.9vmax 0 13vmax', '17.7vmax 0 12.5vmax', '12.2vmax 0 7.4vmax', '14.7vmax 0 12vmax'];
-const bigW = ['2%', '2.1%', '2.7%', '3.8%'];
-const bigH = ['2vmax', '2.1vmax', '1.836vmax', '1.9vmax'];
-const bigMar = ['15.8vmax 0 13vmax', '17.5vmax 0 12.5vmax', '12vmax 0 7.4vmax', '14.5vmax 0 11.9vmax'];
-const rowW = ['98.4%', '98.7%', '96.6%', '95.5%'];
-const rowMar = ['0 0.8%', '0 0.7% 0 0.6%', '0 2.1% 0 1.3%', '0 2.2% 0 2.3%'];
+const btnW = ['1.7%', '1.6%', '2.2%', '3%'];
+const btnH = ['1.7vmax', '1.6vmax', '1.628vmax', '1.62vmax'];
+const btnMar = ['15.9vmax 0 13vmax', '17.7vmax 0 12.5vmax', '13.25vmax 0 8.1vmax', '15.8vmax 0 13vmax'];
+const bigW = ['2%', '2.1%', '2.75%', '3.8%'];
+const bigH = ['2vmax', '2.1vmax', '2.035vmax', '2.052vmax'];
+const bigMar = ['15.8vmax 0 13vmax', '17.5vmax 0 12.5vmax', '13.05vmax 0 7.4vmax', '15.55vmax 0 12.8vmax'];
+const rowW = ['98.4%', '98.7%', '96.6%', '95.1%'];
+const rowMar = ['0 0.8%', '0 0.7% 0 0.6%', '0 2% 0 1.4%', '0 2.4% 0 2.5%'];
 const mapUrl = ['./img/line1.png', './img/line2.png', './img/line3.png', './img/line4.png'];
-const mapMar = ['0', '0', '0 16%', '0 25%'];
+const mapMar = ['0', '0', '0 13%', '0 23%'];
 
 const StationButton = styled.button`
     width: ${props => btnW[props.$line]};
