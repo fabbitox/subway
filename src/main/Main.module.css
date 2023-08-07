@@ -123,3 +123,12 @@ a:hover {
 a:active {
     color : #33ff66;
 }
+
+span.info {
+    position: fixed;
+    top: 2%;
+    right: 3%;
+    background-color: white;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+}
