@@ -16,12 +16,11 @@ const Board = (props) => {
         <>
             <div className={style.vspace} style={{fontWeight: 'bold', marginBottom: '2%'}}>
                 게시판
-                {localStorage.getItem('userid') != null ? <><span style={{marginRight: '14rem'}}></span>
+                {localStorage.getItem('userid') != null && <><span style={{marginRight: '14rem'}}></span>
                     <Link to={`/write/${code}`} style={{
-                        textDecoration: 'none',
                         borderRadius: '0.4rem'
                     }}>글쓰기</Link>
-                </> : <></>}
+                </>}
             </div>
             <Accordian list={list} />
         </>

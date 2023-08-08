@@ -82,7 +82,7 @@ const Select = () => {
                 <input type='checkbox' onChange={() => toggleholiday(!holiday)} checked={holiday} /></span>
                 {line !== -1 && endbtns[line]}
             </div>
-            {line === -1 ? totalmap : endidx !== -1 && <LineMap line={line} day={holiday ? '공휴일:4' : getDayType(time.getDay())} end={end[0][endidx]} />}
+            {line === -1 ? totalmap : endidx !== -1 && <LineMap line={line} day={holiday ? '공휴일:4' : getDayType(time.getDay())} end={end[line][endidx]} />}
         </>
     );
 }
