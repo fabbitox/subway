@@ -11,7 +11,7 @@ const Container = styled.div`
     left: 50%;
     background-color: white;
     border-radius: 0.8rem;
-    border: 0.3rem solid ${props => colors[props.line]};
+    border: 0.3rem solid ${props => colors[props.$line]};
     padding: 2% 5%;
     transform: translate(-50%, -50%);
     overflow-y: auto;
@@ -32,14 +32,14 @@ const CloseBtn = styled.button`
     color: white;
     border: none;
     border-radius: 0.4rem;
-    background-color: ${props => colors[props.line]};
+    background-color: ${props => colors[props.$line]};
     font-weight: 600;
     font-size: 1.2rem;
     padding-top: 0.1rem;
     &:hover {
         background-color: white;
-        color: ${props => colors[props.line]};
-        border: 0.2rem solid ${props => colors[props.line]};
+        color: ${props => colors[props.$line]};
+        border: 0.2rem solid ${props => colors[props.$line]};
     }
 `;
 
@@ -66,10 +66,10 @@ const Modal = (props) => {
     const line = props.line;
     return (
         <div className={style.out} onClick={close}>
-            <Container line={line} onClick={block}>
+            <Container $line={line} onClick={block}>
                 {props.content}
             </Container>
-            <CloseBtn line={line} onClick={close}>X</CloseBtn>
+            <CloseBtn $line={line} onClick={close}>X</CloseBtn>
         </div>
     )
 }

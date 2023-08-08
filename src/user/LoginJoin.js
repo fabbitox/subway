@@ -32,13 +32,14 @@ const LoginJoin = () => {
         const member = { username: userId, password: password };
         axios.post('http://10.125.121.185:8080/login', member).then((response) => {
             if (response.data.message === '로그인 성공') {
-                console.log(response.headers.getAuthorization());
                 localStorage.setItem('userid', userId);
                 localStorage.setItem('accesstoken', response.headers.getAuthorization());
                 goHome();
+            } else {
+                alert('로그인 실패');
             }
         }).catch(() => {
-            console.log('로그인 실패');
+            alert('로그인 실패');
             localStorage.removeItem('userid');
             localStorage.removeItem('accesstoken');
         });
@@ -46,8 +47,8 @@ const LoginJoin = () => {
     const register = () => {
         const member = { username: userId, password: password };
         axios.post('http://10.125.121.185:8080/register', member).then((response) => {
-            console.log(response.data);
-        }).catch(() => console.log('회원가입 실패'));
+            alert(response.data);
+        }).catch(() => alert('회원가입 실패'));
     }
 
     return (

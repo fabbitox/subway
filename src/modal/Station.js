@@ -5,6 +5,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import modalst from './Modal.module.css';
 import KakaoMap from './KakaoMap';
+import Board from './Board';
 
 const ColorSpan = styled.span`
     font-weight: bold;
@@ -33,6 +34,7 @@ const Station = (props) => {
                     <div><strong>주소</strong>: {info.address}</div>
                     <SpanBtn color={color} onClick={() => toggle(!show)}>유래</SpanBtn>
                     {show ? <span>: {info.history}</span> : <span> ← Click!</span>}
+                    <Board code={code} />
                 </div>
                 <KakaoMap addr={info.address} />
             </div>);
