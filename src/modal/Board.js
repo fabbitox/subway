@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import style from './Modal.module.css'
 import Accordian from './Accordian'
+import { Link } from 'react-router-dom'
 
 const Board = (props) => {
     const code = props.code;
@@ -13,7 +14,15 @@ const Board = (props) => {
     }, [code]);
     return (
         <>
-            <div className={style.vspace} style={{fontWeight: 'bold'}}>게시판</div>
+            <div className={style.vspace} style={{fontWeight: 'bold', marginBottom: '2%'}}>
+                게시판
+                {localStorage.getItem('userid') != null ? <><span style={{marginRight: '14rem'}}></span>
+                    <Link to={`/write/${code}`} style={{
+                        textDecoration: 'none',
+                        borderRadius: '0.4rem'
+                    }}>글쓰기</Link>
+                </> : <></>}
+            </div>
             <Accordian list={list} />
         </>
     )

@@ -53,7 +53,7 @@ const LoginJoin = () => {
 
     return (
         <div className={userst.center} style={{border: '0.12vmax solid #00000099', borderRadius: '0.5rem', marginTop: '-10%'}}>
-            <Helmet><title>부산 지하철 정보 | 로그인</title></Helmet>
+            <Helmet><title>부산 지하철 | 로그인</title></Helmet>
             <div className={style.input}>
                 <label htmlFor="userId" className={style.lj}>아이디</label>
                 <input type="text" id="userId" value={userId} onChange={e => setUserId(e.target.value)} className={style.lj} />

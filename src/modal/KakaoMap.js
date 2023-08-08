@@ -31,7 +31,9 @@ const KakaoMap = (props) => {
         <div id='station-map' style={{
             width: '25vmax',
             height: '25vmax',
-            marginLeft: '1vmax'
+            marginLeft: '1vmax',
+            border: '0.15vmax solid black',
+            borderRadius: '0.5rem'
         }}></div>
     )
 }

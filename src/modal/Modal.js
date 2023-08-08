@@ -33,7 +33,7 @@ const CloseBtn = styled.button`
     border: none;
     border-radius: 0.4rem;
     background-color: ${props => colors[props.$line]};
-    font-weight: 600;
+    font-weight: bold;
     font-size: 1.2rem;
     padding-top: 0.1rem;
     &:hover {
