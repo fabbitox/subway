@@ -52,7 +52,7 @@ const Write = () => {
                 <textarea cols='50' rows='8' id='content' value={content} onChange={e => setContent(e.target.value)} className={userst.board}></textarea>
             </div>
             <input type="file" accept="image/*" onChange={e => fileChange(e)} style={{marginRight: '8rem'}} />
-            <Button onClick={submit}>글쓰기</Button>
+            <Button onClick={submit} style={{position: 'absolute', right: '3.2rem'}}>글쓰기</Button>
         </div>
     )
 }

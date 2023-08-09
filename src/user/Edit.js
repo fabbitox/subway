@@ -50,7 +50,7 @@ const Edit = () => {
                 <label htmlFor='content' className={userst.board}>내용</label>
                 <textarea cols='50' rows='8' id='content' value={content} onChange={e => setContent(e.target.value)} className={userst.board}></textarea>
             </div>
-            <Button onClick={submit} style={{marginLeft: '20rem'}}>수정하기</Button>
+            <Button onClick={submit} style={{position: 'absolute', right: '3.2rem'}}>수정하기</Button>
         </div>
     )
 }
