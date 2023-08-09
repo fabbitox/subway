@@ -8,7 +8,7 @@ const Board = (props) => {
     const code = props.code;
     const [list, setList] = useState([]);
     useEffect(() => {
-        axios.get(`http://10.125.121.185:8080/board/list/${code}`).then((response) => {
+        axios.get(`${process.env.REACT_APP_BASEURL}/board/list/${code}`).then((response) => {
             setList(response.data);
         }).catch((error) => console.log(error));
     }, [code]);

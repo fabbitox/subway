@@ -32,7 +32,7 @@ const Write = () => {
         const formData = new FormData();
         formData.append('board', JSON.stringify({'title': title, 'content': content}));
         formData.append('image', selfile);
-        axios.post(`http://10.125.121.185:8080/board/create/${code}`, formData, {headers: {Authorization: localStorage.getItem('accesstoken'), 'Content-Type': 'multipart/form-data'}})
+        axios.post(`${process.env.REACT_APP_BASEURL}/board/create/${code}`, formData, {headers: {Authorization: localStorage.getItem('accesstoken'), 'Content-Type': 'multipart/form-data'}})
         .then((response) => {
             goHome();
         }).catch((error) => {

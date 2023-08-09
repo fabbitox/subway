@@ -25,13 +25,13 @@ const Edit = () => {
     const navigate = useNavigate();
     const goHome = () => navigate('/');
     useEffect(() => {
-        axios.get(`http://10.125.121.185:8080/board/find/${id}`).then((response) => {
+        axios.get(`${process.env.REACT_APP_BASEURL}/board/find/${id}`).then((response) => {
             setTitle(response.data.title);
             setContent(response.data.content);
         }).catch((error) => console.log(error));
     }, [id]);
     const submit = () => {
-        axios.put(`http://10.125.121.185:8080/board/update/${id}`, {'title': title, 'content': content}, {headers: {Authorization: localStorage.getItem('accesstoken'), 'Content-Type': 'application/json'}})
+        axios.put(`${process.env.REACT_APP_BASEURL}/board/update/${id}`, {'title': title, 'content': content}, {headers: {Authorization: localStorage.getItem('accesstoken'), 'Content-Type': 'application/json'}})
         .then((response) => {
             goHome();
         }).catch((error) => {

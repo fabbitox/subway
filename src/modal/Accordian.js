@@ -23,7 +23,7 @@ const Accordian = (props) => {
             <Link to={`/edit/${item.id}`}><FiEdit style={{width: '2rem', display: 'inline-block', color: '#3366ff'}} /></Link>
             <Link to={`/delete/${item.id}`}><RiDeleteBin6Line style={{width: '2rem', display: 'inline-block', color: '#ff3366'}} /></Link>
             {index === idx && <div style={{marginLeft: '2.5rem', color: 'black'}}><div>{item.content}</div>
-                {item.image != null && <img src={`http://10.125.121.185:8080/display?fileName=${item.image}`} alt='게시글 이미지' style={{maxWidth: '25%'}}></img>}
+                {item.image != null && <img src={`${process.env.REACT_APP_BASEURL}/display?fileName=${item.image}`} alt='게시글 이미지' style={{maxWidth: '25%'}}></img>}
             </div>}
         </Div>
     );
