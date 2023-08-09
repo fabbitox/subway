@@ -15,6 +15,7 @@ const Delete = () => {
         }
     }).catch((error) => {
         alert('삭제 실패');
+        goHome();
     });
     return (
         <Helmet><title>부산 지하철 | 게시글 삭제</title></Helmet>

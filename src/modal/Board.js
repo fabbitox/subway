@@ -14,13 +14,18 @@ const Board = (props) => {
     }, [code]);
     return (
         <>
-            <div className={style.vspace} style={{fontWeight: 'bold', marginBottom: '2%'}}>
+            <div className={style.vspace} style={{fontWeight: 'bold', marginBottom: '1%'}}>
                 게시판
-                {localStorage.getItem('userid') != null && <><span style={{marginRight: '14rem'}}></span>
+                {localStorage.getItem('userid') != null && <><span style={{marginRight: '18rem'}}></span>
                     <Link to={`/write/${code}`} style={{
-                        borderRadius: '0.4rem'
+                        textDecoration: 'none'
                     }}>글쓰기</Link>
                 </>}
+            </div>
+            <div style={{fontWeight: 'bold'}}>
+                <span style={{width: '2.5rem', display: 'inline-block'}}></span>
+                <span style={{width: '10rem', display: 'inline-block'}}>제목</span>
+                <span style={{width: '8rem', display: 'inline-block'}}>작성자</span>
             </div>
             <Accordian list={list} />
         </>
