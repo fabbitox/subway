@@ -55,17 +55,20 @@ const LikeButton = ({ id, likesCount }) => {
 const Accordian = (props) => {
     let list = props.list;
     const [index, setIndex] = useState(-1);
+    const role = localStorage.getItem('roles');
+    const manager = role === "[\"ROLE_MANAGER\"]" || role === "[\"ROLE_ADMIN\"]";
+    const admin = manager && role === "[\"ROLE_ADMIN\"]";
 
     const accordian = list.map((item, idx) => 
         <Div key={'board' + item.id} onClick={() => setIndex(idx)}>
             <span style={{width: '2.5rem', display: 'inline-block'}}>{item.id}</span>
             <span style={{width: '10rem', display: 'inline-block'}}>{item.title}</span>
             <span style={{width: '8rem', display: 'inline-block'}}>{item.author}</span>
-            <Link to={`/edit/${item.id}`}><FiEdit style={{width: '2rem', display: 'inline-block', color: '#3366ff'}} /></Link>
-            <Link to={`/delete/${item.id}`}><RiDeleteBin6Line style={{width: '2rem', display: 'inline-block', color: '#ff3366'}} /></Link>
+            {manager && <Link to={`/edit/${item.id}`}><FiEdit style={{width: '2rem', display: 'inline-block', color: '#3366ff'}} /></Link>}
+            {admin && <Link to={`/delete/${item.id}`}><RiDeleteBin6Line style={{width: '2rem', display: 'inline-block', color: '#ff3366'}} /></Link>}
             <LikeButton id={item.id} likesCount={item.likesCount} />
-            {index === idx && <div style={{marginLeft: '2.5rem', color: 'black'}}><div>{item.content}</div>
-                {item.image != null && <img src={`${process.env.REACT_APP_BASEURL}/display?fileName=${item.image}`} alt='게시글 이미지'></img>}
+            {index === idx && <div style={{marginLeft: '2.5rem', color: 'black', width: '24rem'}}><div>{item.content}</div>
+                {item.image != null && <img src={`${process.env.REACT_APP_BASEURL}/display?fileName=${item.image}`} alt='게시글 이미지' style={{maxWidth: '24rem'}}></img>}
             </div>}
         </Div>
     );
