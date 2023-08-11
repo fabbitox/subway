@@ -65,7 +65,7 @@ const Accordian = (props) => {
             <Link to={`/delete/${item.id}`}><RiDeleteBin6Line style={{width: '2rem', display: 'inline-block', color: '#ff3366'}} /></Link>
             <LikeButton id={item.id} likesCount={item.likesCount} />
             {index === idx && <div style={{marginLeft: '2.5rem', color: 'black'}}><div>{item.content}</div>
-                {item.image != null && <img src={`${process.env.REACT_APP_BASEURL}/display?fileName=${item.image}`} alt='게시글 이미지' style={{maxWidth: '25%'}}></img>}
+                {item.image != null && <img src={`${process.env.REACT_APP_BASEURL}/display?fileName=${item.image}`} alt='게시글 이미지'></img>}
             </div>}
         </Div>
     );
