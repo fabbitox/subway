@@ -23,7 +23,7 @@ const LikeButton = ({ id, likesCount }) => {
                 const response = await axios.get(`${process.env.REACT_APP_BASEURL}/board/${id}/checkliked`, { headers: { Authorization: localStorage.getItem('accesstoken') } });
                 setLikeStatus(response.data);
             } catch (error) {
-                console.error("Error:", error);
+                console.error(error);
             }
         };
 
@@ -43,9 +43,9 @@ const LikeButton = ({ id, likesCount }) => {
     return (
         <span>
             {likeStatus ? (
-                <FaHeart style={{ width: '2rem', display: 'inline-block', color: '#cc33ff' }} onClick={() => heart(id)} />
+                <FaHeart style={{ width: '2rem', display: 'inline-block', color: '#9933ff' }} onClick={() => heart(id)} />
             ) : (
-                <FiHeart style={{ width: '2rem', display: 'inline-block', color: '#cc33ff' }} onClick={() => heart(id)} />
+                <FiHeart style={{ width: '2rem', display: 'inline-block', color: '#9933ff' }} onClick={() => heart(id)} />
             )}
             <span>{count}</span>
         </span>
@@ -70,7 +70,7 @@ const Accordian = (props) => {
         </Div>
     );
     return (
-        <>{accordian}</>
+        <div>{accordian}</div>
     )
 }
 
