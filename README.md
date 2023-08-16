@@ -10,7 +10,13 @@
 - 게시판(이미지 첨부 가능)
 - <strong>승강장 정보</strong>(지상/지하 층, 승강장 연결)
 - <strong>편의시설 정보</strong>
+## 실행 방법
+backend: https://github.com/MyStraw/miniproject
 
+subway 폴더에 .env 파일 생성
+#### 내용
+- REACT_APP_KAKAOMAP_APIKEY=카카오맵 API 키
+- REACT_APP_BASEURL=backend 주소
 <img src='img/main.png'>
 <img src='img/info1.png'>
 <img src='img/info2.png'>
