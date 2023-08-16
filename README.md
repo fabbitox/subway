@@ -33,4 +33,4 @@ REACT_APP_BASEURL=backend 주소
 
 | 내 정보 |
 |---------|
-|<img src='img/user.png' style='width: 360px;'>|
+|<img src='img/user.png'>|
