@@ -22,8 +22,15 @@ subway 폴더에 .env 파일 생성
 REACT_APP_KAKAOMAP_APIKEY=카카오맵 API 키
 REACT_APP_BASEURL=backend 주소
 ~~~
+| 메인 화면 |
+|-----------|
+|<img src='img/main.png'>|
 
-<img src='img/main.png'>
-<img src='img/info1.png'>
-<img src='img/info2.png'>
-<img src='img/user.png' style='width: 360px;'>
+| 역 정보 |
+|---------|
+|<img src='img/info1.png'>|
+|<img src='img/info2.png'>|
+
+| 내 정보 |
+|---------|
+|<img src='img/user.png' style='width: 360px;'>|
