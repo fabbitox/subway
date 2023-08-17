@@ -23,6 +23,7 @@ const Main = () => {
     const logout = () => {
         localStorage.removeItem('userid');
         localStorage.removeItem('accesstoken');
+        localStorage.removeItem('roles');
         setUser(null);
     };
     useEffect(() => {
