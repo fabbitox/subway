@@ -9,7 +9,7 @@
 - 게시판(이미지 첨부, 좋아요, 권한에 따른 수정, 삭제)
 ### 편의시설 정보
 - <strong>승강장 정보</strong>(지상/지하 층, 승강장 연결)
-## 유저 정보
+## 내 정보
 내가 쓴 글, 내가 좋아요한 글
 ## 실행 방법
 backend: https://github.com/MyStraw/miniproject  
