@@ -37,7 +37,11 @@ const Write = () => {
         const file = event.target.files[0];
         setFile(file);
         const reader = new FileReader();
-        reader.readAsDataURL(file);
+        if (file != null) {
+            reader.readAsDataURL(file);
+        } else {
+            setImgFile(null);
+        }
         reader.onloadend = () => {
             setImgFile(reader.result);
         };
