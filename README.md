@@ -1,4 +1,4 @@
-# 부산 지하철 이용 정보 <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=black" />
+# 부산 지하철 이용 정보 <img src="https://img.shields.io/badge/React-black?style=flat&logo=React&logoColor=61DAFB?" />
 ## 운행 정보
 - 열차 도착 시각
 ## 역 정보
